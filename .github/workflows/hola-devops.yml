@@ -1,5 +1,11 @@
 # Nombre del workflow que aparecerá en la interfaz de GitHub
-name: Hola DevOps
+name: Imprimir mensaje personalizado
+env:
+    MENSAJE: "¡Hola DevOps!"
+    AUTOR: "Tu Nombre"
+run: |
+    echo "$MENSAJE"
+    echo "Creado por: $AUTOR"
 
 # Evento que activa el workflow
 on:
@@ -7,6 +13,12 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:  # Permite ejecución manual
+    inputs:
+      mensaje:
+        description: 'Mensaje personalizado'
+        required: true
+        default: '¡Hola DevOps!'
 
 # Jobs que se ejecutarán
 jobs:
