@@ -3,7 +3,7 @@ name: Imprimir mensaje personalizado
 env:
     MENSAJE: "¡Hola DevOps!"
     AUTOR: "Tu Nombre"
-run: |
+run-name: |
     echo "$MENSAJE"
     echo "Creado por: $AUTOR"
 
